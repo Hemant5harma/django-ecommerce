@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Product
 
 # Create your views here.
 
@@ -18,7 +19,11 @@ def cart(request):
     return render(request,'cart.html')
 
 def men(request):
-    return render(request,'men.html')
+    data = Product.objects.filter(cateogry="men")
+    context = {
+        'data':data
+    }
+    return render(request,'men.html',context)
 
 def contact(request):
     return render(request,'contact.html')
@@ -26,5 +31,9 @@ def contact(request):
 def about(request):
     return render(request,'about.html')
 
-def product(request):
-    return render(request,'productdescription.html')
+def product(request,id):
+    data = Product.objects.get(id=id)
+    context = {
+        'data':data
+    }
+    return render(request,'productdescription.html',context)

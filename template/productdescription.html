@@ -1,5 +1,4 @@
-{% extends "header_footer.html" %} 
-{% block product %}
+{% extends "header_footer.html" %} {% block product %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,31 +67,26 @@
   </head>
   <body>
     <div class="container my-5">
+      
       <div class="row">
         <div class="col-sm-6 text-center align-self-center">
           <img
-            src="{% static 'images/boysshirt1.webp'%}"
+            src="/media/{{data.image}}"
             alt=""
             class="img-fluid img-thumbnail"
           />
         </div>
         <div class="col-sm-5 offset-sm-1">
           <h2>
-            Jeans
-            <p id="color-title" style="display: inline-block"></p>
+            {{data.title}}
           </h2>
           <hr />
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia nam
-            odit, eaque at placeat dolores iusto quidem commodi nisi aut,
-            aspernatur quo voluptas sit illum repellat nostrum! Sed quod
-            voluptatem libero reprehenderit vitae consequatur debitis vero
-            exercitationem quaerat ipsum alias vel porro aspernatur quos tempore
-            eligendi enim, veniam .
+            {{data.description}}
           </p>
           <br />
           <h4>
-            Rs.500<small class="fw-light text-decoration-line-through"
+            Rs{{data.price}}<small class="fw-light text-decoration-line-through"
               >15999</small
             >
           </h4>
@@ -126,6 +120,7 @@
           </ul>
         </div>
       </div>
+      
     </div>
 
     <script

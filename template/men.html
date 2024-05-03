@@ -1,5 +1,4 @@
-{% extends "header_footer.html" %} 
-{% block men %}
+{% extends "header_footer.html" %} {% block men %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -179,15 +178,16 @@
 
       <div class="flex-item" id="itme-2">
         <div class="allcart">
+          {% for i in data %}
           <div class="mencart">
-            <a href="/productview/{{m.id}}">
+            <a href="/product/{{i.id}}">
               <div class="productcart" id="productimg">
-                <img src="{% static 'images/boyjeans4.webp' %}" alt="" />
+                <img src="/media/{{i.image}}" alt="" />
               </div>
               <hr />
               <div class="productcart" id="productdetails">
-                <p class="title">Jeans</p>
-                <h3 class="price">Rs.500</h3>
+                <p class="title">{{i.title}}</p>
+                <h3 class="price">Rs{{i.price}}</h3>
                 <i class="fa-regular fa-star"></i>
                 <i class="fa-regular fa-star"></i>
                 <i class="fa-regular fa-star"></i>
@@ -195,6 +195,7 @@
               </div>
             </a>
           </div>
+          {% endfor %}
         </div>
       </div>
     </div>

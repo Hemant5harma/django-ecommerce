@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 CATERORY_CHOICES=[
-    {'Men',"men"},
+    {'Men','men'},
     {'Women','women'},
     {'Kids','kids'},
     {'Features','featured'},
