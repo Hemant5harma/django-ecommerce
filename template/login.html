@@ -25,6 +25,7 @@
           <h3 style="color:#12258f;text-align: center;" class = "text-light">Login</h3>
           <hr class = "text-light">
           <form action="" method="post" novalidate class="shadow p-5 bg-light rounded">
+            {% csrf_token %}
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Username</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="username" name="username">
